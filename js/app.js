@@ -11,7 +11,7 @@
   app.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
-      .when('/example-pokedex/', {
+      .when('/', {
         templateUrl: 'views/pokedex.html',
         controller: 'PokedexController'
       })
