@@ -12,15 +12,15 @@
 
     $routeProvider
       .when('/', {
-        templateUrl: '/views/pokedex.html',
+        templateUrl: 'views/pokedex.html',
         controller: 'PokedexController'
       })
       .when('/:type', {
-        templateUrl: '/views/pokedex.html',
+        templateUrl: 'views/pokedex.html',
         controller: 'PokedexController'
       })
       .when('/pokemon/:name', {
-        templateUrl: '/views/pokemon.html',
+        templateUrl: 'views/pokemon.html',
         controller: 'PokemonController'
       })
       .otherwise({
