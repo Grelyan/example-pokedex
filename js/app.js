@@ -11,15 +11,15 @@
   app.config(['$routeProvider', function ($routeProvider) {
 
     $routeProvider
-      .when('/', {
+      .when('/example-pokedex/', {
         templateUrl: 'views/pokedex.html',
         controller: 'PokedexController'
       })
-      .when('/:type', {
+      .when('/example-pokedex/:type', {
         templateUrl: 'views/pokedex.html',
         controller: 'PokedexController'
       })
-      .when('/pokemon/:name', {
+      .when('/example-pokedex/pokemon/:name', {
         templateUrl: 'views/pokemon.html',
         controller: 'PokemonController'
       })
