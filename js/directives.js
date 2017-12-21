@@ -4,49 +4,49 @@
     .directive('pokemonName', function () {
       return {
         restrict: 'E',
-        templateUrl: 'partials/pokemon-name.html'
+        templateUrl: '/example-pokedex/public/partials/pokemon-name.html'
       };
     })
 
     .directive('pokemonImage', function () {
       return {
         restrict: 'E',
-        templateUrl: 'partials/pokemon-image.html'
+        templateUrl: '/example-pokedex/public/partials/pokemon-image.html'
       };
     })
 
     .directive('pokemonData', function () {
       return {
         restrict: 'E',
-        templateUrl: 'partials/pokemon-data.html'
+        templateUrl: '/example-pokedex/public/partials/pokemon-data.html'
       };
     })
 
     .directive('pokemonStats', function () {
       return {
         restrict: 'E',
-        templateUrl: 'partials/pokemon-stats.html'
+        templateUrl: '/example-pokedex/public/partials/pokemon-stats.html'
       };
     })
 
     .directive('pokemonEvolution', function () {
       return {
         retrict: 'E',
-        templateUrl: 'partials/pokemon-evolution.html'
+        templateUrl: '/example-pokedex/public/partials/pokemon-evolution.html'
       };
     })
 
     .directive('pokemonType', function () {
       return {
         restrict: 'E',
-        templateUrl: 'partials/pokemon-type.html'
+        templateUrl: '/example-pokedex/public/partials/pokemon-type.html'
       };
     })
 
     .directive('pokemonComments', ['pokemonService', function (pokemonService) {
       return {
         restrict: 'E',
-        templateUrl: 'partials/pokemon-comments.html',
+        templateUrl: '/example-pokedex/public/partials/pokemon-comments.html',
         scope: {
           name: '@name'
         },
