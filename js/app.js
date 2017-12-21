@@ -20,7 +20,7 @@
         controller: 'PokedexController'
       })
       .when('/pokemon/:name', {
-        templateUrl: '/example-pokedex/public/views/pokemon.html',
+        templateUrl: 'views/pokemon.html',
         controller: 'PokemonController'
       })
       .otherwise({
