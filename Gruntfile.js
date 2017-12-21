@@ -31,7 +31,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('deploy', ['gh-pages']);
+  grunt.registerTask('deploy', ['connect','gh-pages']);
   grunt.registerTask('default', ['connect', 'watch']);
 
 };
