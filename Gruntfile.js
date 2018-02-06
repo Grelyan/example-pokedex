@@ -24,14 +24,70 @@ module.exports = function (grunt) {
           livereload: true
         }
       }
-    }
+    },
+    'http-server': {
+            build: {
+                // the server root directory
+                root: 'public/',
+                port: 9999,
+
+                // the host ip address
+                // If specified to, for example, "127.0.0.1" the server will
+                // only be available on that ip.
+                // Specify "0.0.0.0" to be available everywhere
+                host: "0.0.0.0",
+                //host: "0.0.0.1",
+                showDir: false,
+                autoIndex: true,
+
+                // server default file extension
+                ext: "html",
+
+                // run in parallel with other tasks
+                runInBackground: false,
+
+                // specify a logger function. By default the requests are
+                // sent to stdout.
+                logFn: function(req, res, error) {},
+
+                // Proxies all requests which can't be resolved locally to the given url
+                // Note this this will disable 'showDir'
+                //proxy: "http://afich.dev",
+
+                /// Use 'https: true' for default module SSL configuration
+                /// (default state is disabled)
+                /*https: {
+                    cert: "cert.pem",
+                    key : "key.pem"
+                },*/
+
+                // Tell grunt task to open the browser
+                openBrowser: true,
+
+                // customize url to serve specific pages
+                /*customPages: {
+                    "/readme": "README.md",
+                    "/readme.html": "README.html"
+                }*/
+
+            }
+}
   });
 
-  grunt.loadNpmTasks('grunt-gh-pages');
-  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-http-server');
+  grunt.loadNpmTasks('grunt-gh-pages');
 
-  grunt.registerTask('deploy', ['connect','gh-pages']);
-  grunt.registerTask('default', ['connect', 'watch']);
+  grunt.registerTask('default', ['http-server']);
+
+
+  grunt.registerTask('deploy', ['gh-pages']);
+  //grunt.registerTask('default', ['connect', 'watch']);
+  //grunt.registerTask('default', ['sass', 'concat', 'cssmin', 'uglify', 'copy', 'watch']); // 'http-server',
 
 };
