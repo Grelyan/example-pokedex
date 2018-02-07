@@ -82,11 +82,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-http-server');
   grunt.loadNpmTasks('grunt-gh-pages');
 
-  //grunt.registerTask('server', ['http-server']);
-
-
+  grunt.registerTask('server', ['http-server']);
   grunt.registerTask('deploy', ['gh-pages']);
   grunt.registerTask('default', ['connect', 'watch']);
-  //grunt.registerTask('default', ['sass', 'concat', 'cssmin', 'uglify', 'copy', 'watch']); // 'http-server',
 
 };
